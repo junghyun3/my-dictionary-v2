@@ -1,6 +1,8 @@
 {
   "name": "my-dictionary-v2",
   "version": "0.1.0",
+  "description": "My dictionary v2",
+  "author": "junghyun3 (junghyun3.github.io)",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

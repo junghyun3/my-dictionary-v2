@@ -35,7 +35,7 @@ class Dic extends Component {
             },
             {
               name: 'Naver Korean-English Dict.',
-              url: 'http://m.endic.naver.com/',
+              url: 'https://en.dict.naver.com/#/main',
             },
             {
               name: 'Google',
@@ -54,12 +54,10 @@ class Dic extends Component {
     }
   
     handleShortcut(number) {
-      console.log('shortchut function!', number);
       if (number === 0) {
         this.props.history.push('/config');
       } else {
         this.setState({ webview_url: this.dictionaries[number - 1].url });
-        console.log("handleShortcut:", this.state.webview_url)
       }
     }
   
@@ -77,7 +75,6 @@ class Dic extends Component {
       });
       this._webview.current.addEventListener('did-start-loading', this.handleStartLoading);
       this._webview.current.addEventListener('did-stop-loading', this.handleStopLoading);
-      console.log("componentDidMount:", this.state.webview_url);
     }
   
     componentWillUnmount() {

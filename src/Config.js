@@ -59,7 +59,7 @@ const DragHandle = SortableHandle(() => (
       this.setState({
         items: newOrder,
       });
-      console.log(newOrder);
+      // console.log(newOrder);
       localStorage.setItem('dictionaries', JSON.stringify(newOrder));
     }
   
@@ -86,7 +86,7 @@ const DragHandle = SortableHandle(() => (
     handleRemoveClick(index) {
       const items = this.state.items;
       items.splice(index, 1);
-      console.log('check:', items);
+      // console.log('check:', items);
       this.setState({ items: items });
       localStorage.setItem('dictionaries', JSON.stringify(items));
       // event.preventDefault();

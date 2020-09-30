@@ -1,0 +1,46 @@
+.subtitle {
+    color: #fff;
+    background-color: #ff7373;
+    padding: 3px 15px;
+    font-size: 1.5em;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0px 10px 5px;
+    padding: 0;
+    height: 230px;
+    overflow-y: auto;
+  }
+  
+  form {
+    margin: 0px 10px;
+    padding: 10px 10px;
+    background-color: #fff;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .dic-list-item {
+    background-color: white;
+    padding: 8px 40px;
+    position: relative;
+  }
+  
+  .drag-handle {
+    margin-right: 10px;
+    font: bold 1.5em sans-serif;
+    color: #5f9edf;
+  }
+  
+  .icon-trash {
+    margin-left: 10px;
+    font: bold 1.2em sans-serif;
+    color: red;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+  }
+  

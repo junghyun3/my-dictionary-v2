@@ -41,7 +41,7 @@ const showWindow = () => {
 };
 
 // const assetsDirectory = path.join(__dirname, '../', 'assets');
-const iconPath = path.join(__dirname, 'icon.png');
+const iconPath = path.join(__dirname, 'iconTemplate.png');
 
 let tray = undefined;
 let window = undefined;

@@ -9,6 +9,7 @@ const {
 
 const path = require('path')
 const isDev = require('electron-is-dev')
+const os = require('os')
   
 const toggleWindow = () => {
     if (window.isVisible()) {
@@ -21,21 +22,31 @@ const toggleWindow = () => {
 const getWindowPosition = () => {
     const windowBounds = window.getBounds();
     const trayBounds = tray.getBounds();
-  
+    // console.log("Tray bounds: ", trayBounds.x, trayBounds.width, trayBounds.y, trayBounds.height)
     // Center window horizontally below the tray icon
     const x = Math.round(
       trayBounds.x + trayBounds.width / 2 - windowBounds.width / 2
     );
-  
+    
     // Position window 4 pixels vertically below the tray icon
-    const y = Math.round(trayBounds.y + trayBounds.height + 4);
-  
+    let y = Math.round(trayBounds.y + trayBounds.height + 4);
+
+    // For windows
+    platform = os.platform()
+    // console.log("os", os.platform())
+    if (platform === 'win32'){
+      const winSize = window.getSize()
+      // console.log("Win size:", window.getSize())
+      y = trayBounds.y - winSize[1]
+    }
+
     return { x: x, y: y };
   };
   
 const showWindow = () => {
     const position = getWindowPosition();
     window.setPosition(position.x, position.y, false);
+    console.log(position)
     window.show();
     window.focus();
 };
@@ -86,7 +97,8 @@ const createWindow = () => {
         // hidden
         backgroundThrottling: false,
         nodeIntegration: true,
-        webviewTag: true
+        webviewTag: true,
+        preload: __dirname + '/preload.js' 
       }
     });
     window.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`)

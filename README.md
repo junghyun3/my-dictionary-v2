@@ -24,7 +24,11 @@ Dictionary icon is from [electron-bookmark](https://github.com/2woongjae/electro
 - Make test cases
 
 # Updates
-
+## 201219
+- windows 지원
+    - "window.require not a function" error 발생하여 preload.js 추가하고 index.js, Dic.js 수정
+        - 참고: https://stackoverflow.com/questions/56265958/electronjs-window-require-not-a-function
+    - packaging error가 발생해서 icon.icns 삭제. Default icon으로 생성됨
 ## 200930
 - tray icon issue 
     - icon이 assets 폴더에 있었음. 패키징 하니 에러가 발생함

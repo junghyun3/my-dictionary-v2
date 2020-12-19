@@ -4,7 +4,7 @@ import * as Mousetrap from 'mousetrap';
 import './Dic.css';
 import { RingLoader } from 'react-spinners';
 import { withRouter } from "react-router-dom";
-const electron = window.require("electron")
+// const electron = window.require("electron")
 
 class Dic extends Component {
     constructor() {
@@ -90,7 +90,7 @@ class Dic extends Component {
       if (this._options.current.style.display === 'block') {
         this._options.current.style.display = 'none';
       } else {
-        electron.ipcRenderer.send('hide-me');
+        window.ipcRenderer.send('hide-me');
       }
     }
   
@@ -137,7 +137,7 @@ class Dic extends Component {
     }
   
     handleQuickClick(e) {
-        electron.ipcRenderer.send('close-me');
+        window.ipcRenderer.send('close-me');
     }
   
     render() {

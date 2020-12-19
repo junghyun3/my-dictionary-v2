@@ -30,7 +30,6 @@ Dictionary icon is from [electron-bookmark](https://github.com/2woongjae/electro
         - 참고: https://stackoverflow.com/questions/56265958/electronjs-window-require-not-a-function
     - packaging error가 발생해서 icon.icns 삭제. Default icon으로 생성됨
     - TODO
-        - CMD+1~ 단축키 지원
         - icon 생성
 ## 200930
 - tray icon issue 

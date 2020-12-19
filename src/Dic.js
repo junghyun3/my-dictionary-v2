@@ -63,11 +63,11 @@ class Dic extends Component {
   
     componentDidMount() {
       this.dictionaries.forEach((d, i) => {
-        Mousetrap.bind(`command+${i + 1}`, () => {
+        Mousetrap.bind([`command+${i + 1}`, `ctrl+${i+1}`], () => {
           this.handleShortcut(i + 1);
         });
       });
-      Mousetrap.bind(`command+0`, () => {
+      Mousetrap.bind([`command+0`, `ctrl+0`], () => {
         this.handleShortcut(0);
       });
       Mousetrap.bind('esc', () => {

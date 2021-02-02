@@ -24,6 +24,9 @@ Dictionary icon is from [electron-bookmark](https://github.com/2woongjae/electro
 - Make test cases
 
 # Updates
+## 210202
+- 창 띄우기 단축기 Cmd + shift + D로 수정 예정
+
 ## 201219
 - windows 지원
     - "window.require not a function" error 발생하여 preload.js 추가하고 index.js, Dic.js 수정

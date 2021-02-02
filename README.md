@@ -26,6 +26,7 @@ Dictionary icon is from [electron-bookmark](https://github.com/2woongjae/electro
 # Updates
 ## 210202
 - 창 띄우기 단축기 Cmd + shift + D로 수정 예정
+- 앞, 뒤 버튼 단축키 추가 예정
 
 ## 201219
 - windows 지원

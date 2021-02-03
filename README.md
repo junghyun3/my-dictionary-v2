@@ -6,7 +6,7 @@ I frequently use [올ㅋ사전](http://allkdic.xoul.kr/), but it does not provid
 
 ## Features
 - It's like a small web-browser and you can open it conveniently by clicking the app icon in the tray
-- You can use a shortcut to open the app. `Cmd+Control+Shift+D` to show/hide the app.
+- You can use a shortcut to open the app. `Control+Shift+D` to show/hide the app.
 - You can change the dictionary to another or edit the list of dictionaries
 - In Edit page, you can add new dictionaries, delete dictionaries, and change the ordering.
 

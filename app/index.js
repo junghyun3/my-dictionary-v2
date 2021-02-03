@@ -64,7 +64,7 @@ app.on('ready', () => {
   createTray();
   createWindow();
   createMenu();
-  globalShortcut.register('Ctrl+Cmd+Shift+D', () => {
+  globalShortcut.register('Ctrl+Shift+D', () => {
     toggleWindow();
   });
 });

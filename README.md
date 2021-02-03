@@ -19,15 +19,13 @@ Much code is from [tray-example](https://github.com/kevinsawicki/tray-example), 
 Dictionary icon is from [electron-bookmark](https://github.com/2woongjae/electron-bookmark).
 
 # Todo
-
-- Support other OS.
+- 앞, 뒤 버튼 단축키 추가
+- 창 내에서 단축키 눌러도 동작하도록 수정
 - Make test cases
 
 # Updates
-## 210202
-- 창 띄우기 단축기 Cmd + shift + D로 수정 예정
-- 앞, 뒤 버튼 단축키 추가 예정
-- 창 내에서 단축키 눌러도 동작하도록 수정 예정
+## 210203
+- 창 띄우기 단축기 Ctrl + shift + D로 수정
 
 ## 201219
 - windows 지원

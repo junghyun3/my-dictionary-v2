@@ -23,7 +23,11 @@ Dictionary icon is from [electron-bookmark](https://github.com/2woongjae/electro
 - 창 내에서 단축키 눌러도 동작하도록 수정
 - Make test cases
 
+
 # Updates
+## 210223
+- 창 고정 기능 추가
+
 ## 210203
 - 창 띄우기 단축기 Ctrl + shift + D로 수정
 

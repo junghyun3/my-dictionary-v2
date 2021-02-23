@@ -46,7 +46,7 @@ const getWindowPosition = () => {
 const showWindow = () => {
     const position = getWindowPosition();
     window.setPosition(position.x, position.y, false);
-    console.log(position)
+    // console.log(position)
     window.show();
     window.focus();
 };
@@ -69,9 +69,35 @@ app.on('ready', () => {
   });
 });
 
+const hideWindowHandler = () => {
+  if (!window.webContents.isDevToolsOpened()) {
+    window.hide();
+  }
+}
+
 const createTray = () => {
     tray = new Tray(iconPath);
-    tray.on('right-click', toggleWindow);
+    var contextMenu = Menu.buildFromTemplate([
+      {label: 'Fix window', type: 'checkbox', checked:false, click: function(event){
+        console.log(contextMenu.items[0].checked);
+        // checked가 true이면, hideWindowHandler 제거
+        // checked가 false이면, hideWindowHandler 설정
+        // 기본은 false
+        if (typeof window !== "undefined"){
+            if(contextMenu.items[0].checked){
+              window.removeListener('blur', hideWindowHandler);
+            }else{
+              window.on('blur', hideWindowHandler);
+            }
+        }
+
+      }},
+      {label: 'Quit', click: function(){app.quit();}}
+    ]);
+    
+    tray.on('right-click', function(event){
+      tray.popUpContextMenu(contextMenu);
+    });
     tray.on('double-click', toggleWindow);
     tray.on('click', function(event) {
       toggleWindow();
@@ -103,11 +129,7 @@ const createWindow = () => {
     });
     window.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`)
     // Hide the window when it loses focus
-    window.on('blur', () => {
-      if (!window.webContents.isDevToolsOpened()) {
-        window.hide();
-      }
-    });
+    window.on('blur', hideWindowHandler);
 };
 
 const createMenu = () => {

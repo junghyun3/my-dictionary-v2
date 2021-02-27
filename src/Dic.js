@@ -26,8 +26,8 @@ class Dic extends Component {
           'dictionaries',
           JSON.stringify([
             {
-              name: 'Dictionary.com',
-              url: 'http://www.dictionary.com/',
+              name: 'Google Trans.',
+              url: 'https://translate.google.co.kr/?hl=ko&sl=en&tl=ko&op=translate',
             },
             {
               name: "Oxford learner's Dict.",

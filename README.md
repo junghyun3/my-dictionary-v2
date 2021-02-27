@@ -25,11 +25,16 @@ Dictionary icon is from [electron-bookmark](https://github.com/2woongjae/electro
 
 
 # Updates
+
+## 210227
+- 창 띄우기 단축키 윈도우는 Alt + Shift + D로 수정
+- 창 고정을 기본값으로 수정
 ## 210223
 - 창 고정 기능 추가
+- 오른쪽 버튼 눌렀을 때 context menu 추가
 
 ## 210203
-- 창 띄우기 단축기 Ctrl + shift + D로 수정
+- 창 띄우기 단축키 Ctrl + shift + D로 수정
 
 ## 201219
 - windows 지원

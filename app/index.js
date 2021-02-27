@@ -33,7 +33,6 @@ const getWindowPosition = () => {
 
     // For windows
     platform = os.platform()
-    // console.log("os", os.platform())
     if (platform === 'win32'){
       const winSize = window.getSize()
       // console.log("Win size:", window.getSize())
@@ -64,7 +63,15 @@ app.on('ready', () => {
   createTray();
   createWindow();
   createMenu();
-  globalShortcut.register('Ctrl+Shift+D', () => {
+
+  var platform = os.platform();
+  var shortcut = ''
+  if (platform === 'darwin'){
+    shortcut = 'Ctrl+Shift+D';
+  } else{
+    shortcut = 'Alt+Shift+D';
+  }
+  globalShortcut.register(shortcut, () => {
     toggleWindow();
   });
 });
@@ -78,7 +85,7 @@ const hideWindowHandler = () => {
 const createTray = () => {
     tray = new Tray(iconPath);
     var contextMenu = Menu.buildFromTemplate([
-      {label: 'Fix window', type: 'checkbox', checked:false, click: function(event){
+      {label: 'Fix window', type: 'checkbox', checked:true, click: function(event){
         console.log(contextMenu.items[0].checked);
         // checked가 true이면, hideWindowHandler 제거
         // checked가 false이면, hideWindowHandler 설정
@@ -129,7 +136,7 @@ const createWindow = () => {
     });
     window.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`)
     // Hide the window when it loses focus
-    window.on('blur', hideWindowHandler);
+    // window.on('blur', hideWindowHandler);
 };
 
 const createMenu = () => {
